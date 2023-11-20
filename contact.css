@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#one {
+    position: relative;
+    left: 50%; /* Added starting position */
+    animation: move 7s infinite;
+}
+
+@keyframes move {
+    from {
+        left: 0%;
+        background-color: black;
+        border: 2px solid greenyellow;
+    }
+
+    to {
+        border: 2px solid greenyellow;
+
+        left: 70%;     
+          border: 2px solid pink;
+
+        background-color: red;
+    }
+}
+
+#header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+#contact-info {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    margin: 10px 0;
+}
+
+#linkedin,
+#facebook,
+#instagram {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#linkedin img,
+#facebook img,
+#instagram img {
+    margin-left: 10px; /* Adjust the spacing as needed */
+    width: 30px; /* Adjust the size as needed */
+}

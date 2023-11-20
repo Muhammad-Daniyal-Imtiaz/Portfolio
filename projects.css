@@ -1,0 +1,80 @@
+/* projects.css */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+#header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+#searchInput {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* margin-top: 20px; */
+    margin-bottom: -800px;
+}
+
+.project {
+    width: 300px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-details {
+    margin-top: 10px;
+    color: #555;
+}
+
+
+/* #iframe-container{
+
+margin-top: -100px;
+
+} */
+
+  li{
+    color: goldenrod;
+
+
+
+margin-bottom: 100px;
+}
+
+
+
+

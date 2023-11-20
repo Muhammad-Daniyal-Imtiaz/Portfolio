@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates Showcase</title>
+    <link rel="stylesheet" href="certificate.css">
+</head>
+<body>
+
+
+
+    <div id="hea">
+        <h1>Certificates Showcase</h1>
+    </div>
+    
+<br/>
+<br/>
+<br/>
+<br/>
+
+    <div id="search-container">
+        <strong>
+        <label for="search">Search Certificates:</label></strong>
+        <input type="text" id="search" oninput="filterCertificates()">
+    </div>
+
+    <div id="certificate-list">
+        <!-- Certificate cards will be dynamically added here -->
+    </div>
+
+    <script>
+        // Certificate data
+        const certificates = [
+            {
+                name: "Introduction to Front-End Development by Meta",
+                issueDate: "17 Oct 2023",
+                companyName: "Meta",
+                certificatePic: "metacer.png",
+                certificateId: "W3P2GYBADF4N",
+                url: "https://www.coursera.org/account/accomplishments/certificate/W3P2GYBADF4N"
+            },
+            {
+                name: "Create a React App:ReactJS Tutorial and Flux Web Dev",
+                issueDate: "15 sep 2023",
+                companyName: "Company B",
+                certificatePic: "bitcer.png",
+                certificateId: "3744922",
+                url: "https://www.bitdegree.org/courses/user/muhammad-daniyal-imtiaz1582195/certificates"
+            },
+            {
+                name: "Advance Nextjs concepts",
+                issueDate: "12 sep 2023",
+                companyName: "Codedamn",
+                certificatePic: "codedamncer.png",
+                certificateId: "5ab15fbed06b20829cd1e9d670c43ec033e451a4",
+                url: "https://codedamn.com/certificate/verify/5ab15fbed06b20829cd1e9d670c43ec033e451a4"
+            },
+
+            // Add more certificate objects as needed 5ab15fbed06b20829cd1e9d670c43ec033e451a4
+       
+            {
+                name: "HTML and CSS:Introduction to Frontend Web Development",
+                issueDate: "27 Oct 2023",
+                companyName: "udemy",
+                certificatePic: "ud1cer.png",
+                certificateId: "UC-f05b5b26-4a6f-4d10-9d5f-424a9ea49d8a",
+                url: "https://www.udemy.com/certificate/UC-f05b5b26-4a6f-4d10-9d5f-424a9ea49d8a/"
+            },
+
+
+            {
+                name: "Advance Nextjs concepts",
+                issueDate: "12 sep 2023",
+                companyName: "Codedamn",
+                certificatePic: "codedamncer.png",
+                certificateId: "5ab15fbed06b20829cd1e9d670c43ec033e451a4",
+                url: "https://www.example.com/certificate2"
+            },
+
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        ];
+
+        // Function to display certificates
+        function displayCertificates(certificatesArray) {
+            const certificateList = document.getElementById("certificate-list");
+
+            // Clear previous content
+            certificateList.innerHTML = "";
+
+            // Use the provided array or the original certificates array
+            const certs = certificatesArray || certificates;
+
+            // Iterate through certificates and create HTML elements
+            certs.forEach(cert => {
+                const certificateCard = document.createElement("div");
+                certificateCard.classList.add("certificate-card");
+
+                certificateCard.innerHTML = `
+                    <img src="${cert.certificatePic}" alt="${cert.name}">
+                    <h3>${cert.name}</h3>
+                    <p>Issue Date: ${cert.issueDate}</p>
+                    <p>Company: ${cert.companyName}</p>
+                    <p>ID: ${cert.certificateId}</p>
+                    <a href="${cert.url}" target="_blank">Learn More</a>
+                `;
+
+                certificateList.appendChild(certificateCard);
+            });
+        }
+
+        // Function to filter certificates based on search input
+        function filterCertificates() {
+            const searchInput = document.getElementById("search").value.toLowerCase();
+
+            const filteredCertificates = certificates.filter(cert =>
+                cert.name.toLowerCase().includes(searchInput)
+            );
+
+            // Update the display with the filtered certificates
+            displayCertificates(filteredCertificates);
+        }
+
+        // Initial display of certificates
+        displayCertificates();
+    </script>
+
+</body>
+</html>

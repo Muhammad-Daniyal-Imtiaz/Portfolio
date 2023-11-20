@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Your Name</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+
+    <div id="header">
+        <h1>Your Name's Projects</h1>
+        <input type="text" id="searchInput" placeholder="Search by project name">
+    </div>
+
+    <section id="staticData">
+
+
+        </ul>
+        <!-- Add iframe here -->
+        <div id="iframe-container">
+            <iframe src="https://my.spline.design/visualicons-5b6420691f2b1e336c941e9d94c5a6bc/" width="100%" height="450px" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Dynamic Projects</h2>
+        <!-- Project details will be dynamically populated here -->
+    </section>
+    <section id="sdata">
+        <!-- <h2>Projects made but not displayed on Github and Vercel</h2> -->
+        <ul>
+            <div id="sd1">
+                <li>Projects made but not displayed on Github and Vercel</li>
+            <li>Dictionary App in React</li>
+            <li>Quiz App in Next.js</li>
+            <li>Shopping Cart in Next.js</li>
+            <li>Others include that are given with links and are deployed are given below </li>
+        </div>
+            <!-- Add more items as needed -->
+        </section>
+
+
+    <script>
+        // projects.js
+        document.addEventListener('DOMContentLoaded', function () {
+            const projects = [
+                {
+                    id: 1,
+                    name: 'Todolist(in React)',
+                    completionDate: '1 sep 2023',
+                    projectUrl: 'https://todolist-alpha-lemon.vercel.app/',
+                },
+                {
+                    id: 2,
+                    name: 'Recipe-app',
+                    completionDate: '2 sep 2023',
+                    projectUrl: 'https://recipe-app-eta-ruby.vercel.app/',
+                },
+                {
+                    id: 3,
+                    name: 'shopping-cart',
+                    completionDate: '12 sep 2023',
+                    projectUrl: 'https://cart-theta-two.vercel.app/',
+                },
+                // Add more projects as needed
+            ];
+
+            const staticDataSection = document.getElementById('staticData');
+            const projectsSection = document.getElementById('projects');
+            const searchInput = document.getElementById('searchInput');
+
+            // Function to render projects
+            function renderProjects(filteredProjects) {
+                projectsSection.innerHTML = '';
+                filteredProjects.forEach(project => {
+                    const projectElement = document.createElement('div');
+                    projectElement.classList.add('project');
+                    projectElement.innerHTML = `
+                        <h3>${project.name}</h3>
+                        <img src="${project.imagePath}" alt="${project.name} Image">
+                        <div class="project-details">
+                            <p>ID: ${project.id}</p>
+                            <p>Completion Date: ${project.completionDate}</p>
+                            <p>Cost: $${project.projectCost}</p>
+                            <a href="${project.projectUrl}" target="_blank">Visit Project</a>
+                        </div>
+                    `;
+                    projectsSection.appendChild(projectElement);
+                });
+            }
+
+            // Initial rendering
+            renderProjects(projects);
+
+            // Event listener for search input
+            searchInput.addEventListener('input', function () {
+                const searchTerm = searchInput.value.toLowerCase();
+                const filteredProjects = projects.filter(project => project.name.toLowerCase().includes(searchTerm));
+                renderProjects(filteredProjects);
+            });
+        });
+    </script>
+</body>
+<!-- projects.css -->
+</html>
